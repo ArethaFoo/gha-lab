@@ -1,0 +1,10 @@
+name: test # human readable label for the test
+on: # defiines when the workflow is trigger
+  push:
+    branches: [ main ] # defines trigger workflow when there's a push to main branch
+jobs: # defines actual commands to run
+  build:
+    runs-on: ubuntu-latest # defines build and run on where
+    steps:
+      - uses: actions/checkout@v2
+      - run: python hello.py
